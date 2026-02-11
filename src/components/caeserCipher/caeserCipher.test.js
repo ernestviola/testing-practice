@@ -28,9 +28,13 @@ test("check lower case strings", () => {
 });
 
 test("check string with non letters", () => {
-  expect(caeserCipher("1abc", 3)).toBe("1def");
+  expect(caeserCipher("1abc ", 3)).toBe("1def ");
 });
 
 test("check for capital letters", () => {
   expect(caeserCipher("ABC", 3)).toBe("DEF");
+});
+
+test("reverse direction", () => {
+  expect(caeserCipher("abc", -3)).toBe("xyz");
 });

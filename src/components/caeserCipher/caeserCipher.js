@@ -11,10 +11,20 @@ export default function caeserCipher(str, shift) {
       let shiftedAsciiLetter;
       if (asciiCode >= 97 && asciiCode <= 122) {
         // lowercase
-        shiftedAsciiLetter = ((asciiCode - 97 + shift) % 26) + 97;
+        shiftedAsciiLetter = asciiCode - 97 + shift;
+        if (shiftedAsciiLetter < 0) {
+          // if we have a negative shift
+          shiftedAsciiLetter = shiftedAsciiLetter + 26;
+        }
+        shiftedAsciiLetter = (shiftedAsciiLetter % 26) + 97;
       } else {
         //capital
-        shiftedAsciiLetter = ((asciiCode - 65 + shift) % 26) + 65;
+        shiftedAsciiLetter = asciiCode - 65 + shift;
+        if (shiftedAsciiLetter < 0) {
+          // if we have a negative shift
+          shiftedAsciiLetter = shiftedAsciiLetter + 26;
+        }
+        shiftedAsciiLetter = (shiftedAsciiLetter % 26) + 65;
       }
 
       const shiftedLetter = String.fromCharCode(shiftedAsciiLetter);
