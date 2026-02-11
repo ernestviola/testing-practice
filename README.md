@@ -1,3 +1,5 @@
-# Webpack template
+# Jest Testing
 
-A simple webpack template made by Ernest Viola to quickly start new projects.
+A repository to practice how to test using jest.
+
+Testing examples are found in ./src/components.
